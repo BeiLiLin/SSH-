@@ -1,0 +1,40 @@
+.container{
+    padding-top: 90px;
+}
+.mainRight{
+display: inline-block;
+width: 18%;
+float: right;
+}
+.mainLeft{
+    display: inline-block;
+    width: 80%;
+}
+.mainRight ul{
+    list-style: none;
+    width: 110px;
+    margin: 55px auto;
+}
+.mainRight ul li{
+    margin: 5px;
+}
+.mainRight ul li a{
+    display: block;
+}
+.RightInput{
+    cursor: pointer;
+}
+.addBtm{
+    margin:0 auto;
+}
+.myInput{
+    outline: none;
+    border: none;
+
+}
+.myInput:hover {
+    background-color:#e9ecef;
+}
+.addform{
+    text-align: center;
+}

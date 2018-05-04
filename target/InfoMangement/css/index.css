@@ -1,0 +1,51 @@
+body{
+    background-color: #b8d6d2;
+}
+.RightInput{
+    cursor: pointer;
+}
+/*loginform表单*/
+.loginBtm{
+    margin-right: -20px;
+    margin-top: 15px;
+    margin-left: 59px;
+}
+
+.formDiv{
+    margin: auto auto;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+.logintable{
+    margin: 33px auto;
+}
+#cookie{
+    float: right;
+    margin-top: 31px;
+    margin-right: 18px;
+}
+#loginForm{
+    border-radius: 8px;
+    background-color: #fcfefe;
+    margin: auto;
+    position: absolute;
+    width: 422px;
+    height: 334px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+/*输入框一致*/
+.Login{
+    margin: 5px;
+    width: 200px;
+    height: 30px;
+}
+#uid{
+    margin-top: 76px;
+}
+#cookie{
+    margin-left: 321px;
+    margin-top: 12px;
+}

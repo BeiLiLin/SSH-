@@ -1,0 +1,43 @@
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+.carousel{
+    margin: 0 auto;
+}
+.mainLeft{
+
+    margin-top: 10px;
+    width: 42%;
+    display: inline-block;
+}
+.mainMain{
+    margin-top: 10px;
+    display: inline-block;
+    width: 42%;
+}
+
+.mainRight{
+    margin-top: 10px;
+    width: 14%;
+    display: inline-block;
+}
+.mainLeft h3{
+    background-color: #9fcdff;
+    margin-top: 10px;
+}
+.mainMain h3{
+    background-color: #20c997;
+    margin-top: 10px;
+}
+.mainRight h3{
+    background-color: #aed6d2;
+    margin-top: 10px;
+}
+
+.mainRight img{
+    width: 100%;
+    height: 52px;
+    display: block;
+    margin-top: 10px;
+}

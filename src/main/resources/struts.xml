@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+
+    <package name="default" namespace="/" extends="struts-default"/>
+
+    <package name="user" namespace="/user" extends="struts-default">
+        <interceptors>
+            <interceptor name="userInterceptor" class="Interceptors.LoginInterceptor"/>
+            <interceptor-stack name="myStack">
+                <interceptor-ref name="defaultStack"/>
+                <interceptor-ref name="userInterceptor"/>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="myStack"/>
+        <global-results>
+            <result name="login">/index.jsp</result>
+        </global-results>
+
+        <action name="User_*" class="action.LoginAction" method="{1}">
+            <result name="success">/WEB-INF/main.jsp</result>
+            <result name="input">/index.jsp</result>
+        </action>
+
+        <!--登录界面不引用自定义拦截器-->
+        <action name="login" class="action.LoginAction" method="login">
+            <result name="success">/WEB-INF/main.jsp</result>
+            <interceptor-ref name="defaultStack"/>
+        </action>
+
+        <action name="Page_*" class="action.PageAction" method="{1}">
+            <result name="top">/WEB-INF/top.jsp</result>
+            <result name="main">/WEB-INF/main.jsp</result>
+            <result name="StuManage">/WEB-INF/crud/StudentMangement.jsp</result>
+            <result name="logout">/index.jsp</result>
+        </action>
+    </package>
+<!--studentAjx请求-->
+    <package name="studentAjx" namespace="/sAjax" extends="json-default">
+        <interceptors>
+            <interceptor name="loginInterceptor" class="Interceptors.LoginInterceptor">
+            </interceptor>
+            <interceptor-stack name="myStack">
+                <interceptor-ref name="defaultStack"/>
+                <interceptor-ref name="loginInterceptor"/>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="myStack"/>
+        <action name="Stu_*" class="action.StudentAjaxAction" method="{1}">
+            <result type="json"></result>
+        </action>
+    </package>
+    <!--学生表操作-->
+    <package name="student" namespace="/stu" extends="struts-default">
+        <action name="Stu_*" class="action.StudentAction" method="{1}">
+            <result name="success">/WEB-INF/crud/StudentMangement.jsp</result>
+        </action>
+    </package>
+
+</struts>
